@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hex Grid</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="hexgrid.js"></script>
+<style type="text/css">
+* {
+	margin: 0px; padding: 0px;
+}
+body {
+	padding: 10px;
+}
+h1 {
+	font-size: larger;
+	text-align: center;
+}
+#grid {
+/*
+	width: 600px;
+*/
+	position: relative;
+	height: 400px;
+}
+.svghex {
+	fill: lightblue;
+	stroke: blue;
+	stroke-width: 0;
+}
+.svghex:hover {
+	stroke-width: 1;
+}
+.svgtext {
+	display: none;
+}
+</style>
+<body>
+
+<h1>Hex Grid</h1>
+
+<div id="grid" />
+
+</body>
+</head>
+</html>
