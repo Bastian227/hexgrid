@@ -1,0 +1,27 @@
+* {
+	margin: 0px; padding: 0px;
+}
+body {
+	padding: 10px;
+}
+h1 {
+	font-size: larger;
+	text-align: center;
+}
+#grid {
+	position: relative;
+	height: 600px;
+}
+.svghex {
+	cursor: pointer;
+}
+.svghex polygon {
+	fill: lightblue;
+	stroke: blue;
+	stroke-width: 0px;
+}
+.svghex text {
+	font-family: sans-serif;
+	font-size: 8px;
+	cursor: pointer;
+}
