@@ -1,3 +1,5 @@
+var grid;
+
 function toggleSelect(event) {
 	event.preventDefault();
 
@@ -17,7 +19,7 @@ function toggleHover(event, obj, enter) {
 	var ring = coords[0];
 
 	if ( enter ) {
-		var hex = getHexSpace([coords[0],coords[1]]);
+		var hex = grid.getHexByCoords([coords[0],coords[1]]);
 		if ( hex !== undefined && hex !== null ) {
 			for ( var side = 0; side < 6; side++ ) {
 				if ( hex.neighbors[side] !== undefined && hex.neighbors[side] !== null ) {
@@ -25,9 +27,8 @@ function toggleHover(event, obj, enter) {
 				}
 			}
 		}
-//		$('.ring' + ring + ' polygon').css('stroke-width', '1px');
 	} else {
-		var hex = getHexSpace([coords[0],coords[1]]);
+		var hex = grid.getHexByCoords([coords[0],coords[1]]);
 		if ( hex !== undefined && hex !== null ) {
 			for ( var side = 0; side < 6; side++ ) {
 				if ( hex.neighbors[side] !== undefined && hex.neighbors[side] !== null ) {
@@ -35,12 +36,12 @@ function toggleHover(event, obj, enter) {
 				}
 			}
 		}
-//		$('.ring' + ring + ' polygon').css('stroke-width', '0px');
 	}
 }
 
 $(document).ready( function() {
-	drawGrid();
+	grid = new Grid();
+	grid.draw();
 	$('.svghex').click(toggleSelect);
 	$('.svghex').hover(
 		function(event) { toggleHover(event, this, true); },
